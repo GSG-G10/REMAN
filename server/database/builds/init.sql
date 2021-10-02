@@ -21,10 +21,11 @@ CREATE TABLE products(
 
 
 CREATE TABLE cart(
-    id SERIAL PRIMARY KEY,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     product_id INTEGER REFERENCES products(id) ON DELETE CASCADE,
-    qunatity INTEGER
+    qunatity INTEGER,
+    
+    PRIMARY KEY (user_id,product_id)
 );
 
 insert into users(name, email, password, isAdmin) values ('Nizar', 'nizar@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
