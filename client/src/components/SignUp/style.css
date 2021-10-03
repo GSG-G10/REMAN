@@ -34,25 +34,24 @@
   margin-top: 1rem;
   width: 100%;
 }
-.social{
+.social {
   width: 15rem;
   height: 6vh;
   display: flex;
-  justify-content:space-between;
-  align-items:center;
+  justify-content: space-between;
+  align-items: center;
 }
-.social *:hover{
+.social *:hover {
   cursor: pointer;
-  
 }
 
-.anticon{
+.anticon {
   padding: 0.5rem 1rem;
   border-radius: 3px;
-  transition: all .3s ease-in;
+  transition: all 0.3s ease-in;
 }
-.anticon:hover{
-  border: 0.8px solid #F5F5F5;
+.anticon:hover {
+  border: 0.8px solid #f5f5f5;
   box-sizing: border-box;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
   transform: scale(1.1);

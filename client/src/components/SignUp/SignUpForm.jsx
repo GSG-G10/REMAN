@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -6,27 +6,8 @@ import { Form, Input, Button } from 'antd';
 
 import './style.css';
 
-
-const tailFormItemLayout = {
-  wrapperCol: {
-    xs: {
-      span: 24,
-      offset: 0,
-    },
-    sm: {
-      span: 16,
-      offset: 8,
-    },
-  },
-};
-
 const SignUpForm = () => {
-  const [signupData, setSignupData] = useState({});
-
-  useEffect(() => {
-    console.log(signupData);
-    return () => console.log('clean');
-  }, [signupData]);
+  const [, setSignupData] = useState({});
 
   const onFinish = (values) => setSignupData(values);
 
@@ -99,7 +80,7 @@ const SignUpForm = () => {
                 }
 
                 return Promise.reject(
-                  new Error('The two passwords that you entered do not match!')
+                  new Error('The two passwords that you entered do not match!'),
                 );
               },
             }),
@@ -108,7 +89,7 @@ const SignUpForm = () => {
           <Input.Password />
         </Form.Item>
         <Link to="/login">Return to login</Link>
-        <Form.Item >
+        <Form.Item>
           <Button type="primary" htmlType="submit">
             Register
           </Button>
