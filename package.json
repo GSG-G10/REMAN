@@ -5,8 +5,9 @@
   "description": "e-commerce",
   "main": "index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev" : "nodemon server/index.js",
+    "start": "NODE_ENV=production node server/index.js",
+    "dev" : "NODE_ENV=development nodemon server/index.js",
+    "test" : "NODE_ENV=test jest",
     "client": "cd client && npm start",
     "kill" : "fuser -k 5000"
   },
