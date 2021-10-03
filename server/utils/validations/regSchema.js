@@ -13,4 +13,4 @@ const regSchema = Joi.object({
     confirmPassword: Joi.ref('password'),
 });
 
-module.exports= regSchema;
+module.exports= {regSchema};

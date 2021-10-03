@@ -1,4 +1,4 @@
-const {signup} = require('./register');
+const signup = require('./register');
 
 
 module.exports = {signup};

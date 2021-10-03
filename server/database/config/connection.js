@@ -1,4 +1,6 @@
 const { Pool } = require('pg');
+require('env2')('config.env');
+
 
 const { DEV_DB_URL, TEST_DB_URL, DATABASE_URL } = process.env;
 let dbUrl = '';
@@ -15,7 +17,7 @@ switch (process.env.NODE_ENV) {
     break;
   default:
     throw new Error('DATA BASE ERROR');
-}
+};
 
 const options = {
   connectionString: dbUrl,
@@ -23,5 +25,6 @@ const options = {
     rejectUnauthorized: false,
   },
 };
+
 
 module.exports = new Pool(options);
