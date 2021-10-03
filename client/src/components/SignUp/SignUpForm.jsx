@@ -7,7 +7,7 @@ import { Form, Input, Button } from 'antd';
 import './style.css';
 
 const SignUpForm = () => {
-  const [, setSignupData] = useState({});
+  const [signupData, setSignupData] = useState({});
 
   const onFinish = (values) => setSignupData(values);
 
