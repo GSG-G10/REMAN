@@ -9,13 +9,12 @@ const ProductCard = () => {
     <div className="card">
       <Card
         hoverable
-        style={{ width: '100%', borderRadius: 4 }}
+        style={{ width: '100%', borderRadius: 4, border: '1px solid #DDD', padding:1 }}
         cover={
           <img
             style={{
               maxWidth: '100%',
               maxHeight: '100%',
-              backgroundOrigin: 'content-box',
             }}
             alt="example"
             src="https://www.aroma-zen.com//cache/images/images/products/47/2787/2787_lait_corporel_regenerant_a_la_grenade_200_ml_1.jpg.thumb_1000x800.jpg"
