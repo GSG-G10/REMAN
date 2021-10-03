@@ -1,0 +1,71 @@
+.card {
+  width: 30%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  margin: 2rem 0;
+}
+.ant-card-body {
+  padding: 1rem;
+}
+.content-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 7rem;
+}
+.card-btns-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btns {
+  display: flex;
+  width: 25%;
+  justify-content: space-evenly;
+}
+.price {
+  font-size: 1.4rem;
+  margin: 0;
+}
+.ant-card-cover {
+  max-width: 100%;
+  height: 21rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+}
+
+/* ----------- CARD MEDIA QUERY ---------- */
+
+@media only screen and (max-width: 1024px) {
+  .ant-card-cover {
+    max-width: 100%;
+    height: 17rem;
+  }
+  .icon {
+    font-size: 1.6rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 45%;
+  }
+  .icon {
+    font-size: 1.2rem;
+  }
+  .price {
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .card {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .ant-card-cover {
+    height: 14rem;
+  }
+}

@@ -1,10 +1,13 @@
+import { Fragment } from 'react';
 import './App.css';
+import HomePage from './pages/homePage/HomePage';
+
 
 function App() {
   return (
-    <div>
-      <h1>REMAN</h1>      
-    </div>
+    <Fragment>
+      <HomePage />     
+    </Fragment>
   );
 }
 
