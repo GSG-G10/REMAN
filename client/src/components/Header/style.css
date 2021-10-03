@@ -1,8 +1,14 @@
 .header{
-    width:90%;
-    height: 5rem;
-    margin: auto;
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
+  width:90%;
+  height: 5rem;
+  margin: auto;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 320px) and (max-width: 786px) {
+  .header {
+    height: 15rem;
+    flex-direction: column;
+  }
 }
