@@ -6,24 +6,6 @@ import { Form, Input, Button } from 'antd';
 
 import './style.css';
 
-// const formItemLayout = {
-//   labelCol: {
-//     xs: {
-//       span: 24,
-//     },
-//     sm: {
-//       span: 8,
-//     },
-//   },
-//   wrapperCol: {
-//     xs: {
-//       span: 24,
-//     },
-//     sm: {
-//       span: 16,
-//     },
-//   },
-// };
 
 const tailFormItemLayout = {
   wrapperCol: {
@@ -51,7 +33,6 @@ const SignUpForm = () => {
   return (
     <div className="form-container">
       <Form
-        // {...formItemLayout}
         name="register"
         onFinish={onFinish}
         scrollToFirstError
