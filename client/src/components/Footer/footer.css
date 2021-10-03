@@ -1,0 +1,36 @@
+.footer{
+  background-color: #1A1A1A;
+  color:#fff;
+  padding: 10px 0;
+  width:100%;
+}
+.container{
+  width:90%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.photos{
+  display: flex;
+  flex-direction: column;
+}
+.list  li{
+ list-style: none;
+ margin: 7px 0;
+}
+.footer p{
+  text-align: center;
+}
+@media (max-width : 1000px) {
+  .footer{
+    margin: auto;
+  }
+  .container{
+    flex-direction: column;
+  }
+  .list {
+    margin: 0;
+  }
+  .icons-list{
+    margin: 0 15px;
+  }
+}
