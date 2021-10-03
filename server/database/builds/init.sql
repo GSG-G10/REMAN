@@ -28,10 +28,10 @@ CREATE TABLE cart(
     PRIMARY KEY (user_id,product_id)
 );
 
-insert into users(name, email, password, isAdmin) values ('Nizar', 'nizar@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
-insert into users(name, email, password, isAdmin) values ('Reem', 'reem@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
-insert into users(name, email, password, isAdmin) values ('Muath', 'muath@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
-insert into users(name, email, password, isAdmin) values ('Eman', 'eman@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
-insert into users(name, email, password, isAdmin) values ('Abdallah', 'abdallah@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
+INSERT INTO users(name, email, password, isAdmin) VALUES ('Nizar', 'nizar@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
+INSERT INTO users(name, email, password, isAdmin) VALUES ('Reem', 'reem@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
+INSERT INTO users(name, email, password, isAdmin) VALUES ('Muath', 'muath@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
+INSERT INTO users(name, email, password, isAdmin) VALUES ('Eman', 'eman@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
+INSERT INTO users(name, email, password, isAdmin) VALUES ('Abdallah', 'abdallah@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
 
 COMMIT;

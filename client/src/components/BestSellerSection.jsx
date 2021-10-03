@@ -1,6 +1,6 @@
 import React from 'react';
-import ProductCard from '../../components/Card/ProductCard';
-import './home.css';
+import ProductCard from './Card/ProductCard';
+import '../home.css';
 
 const BestSellerSection = () => {
   return (

@@ -1,11 +1,16 @@
-import { Fragment } from 'react';
-import HomePage from './pages/homePage/HomePage';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { SignUp } from './components';
+import Home from './Home';
 
 function App() {
   return (
-    <Fragment>
-      <HomePage />
-    </Fragment>
+    <Router>
+      <Switch>
+        <Route exact path="/signup" component={SignUp} />
+        <Route exact path="/home" component={Home} />
+        <Route path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 }
 
