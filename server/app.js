@@ -1,4 +1,4 @@
-require('env2')('.env');
+require('env2')('config.env');
 
 const express = require('express');
 
