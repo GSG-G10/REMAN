@@ -1,27 +1,22 @@
 import React from 'react';
 import { Card } from 'antd';
+
 import './card.css';
 import 'antd/dist/antd.min.css';
+import Img from '../common/Img';
+
 import ContentCard from './ContentCard';
 
-const ProductCard = () => {
+const ProductCard = ({ card }) => {
+  const { name, image, price, rate } = card;
   return (
     <div className="card">
       <Card
         hoverable
-        style={{ width: '100%', borderRadius: 4, border: '1px solid #DDD', padding:1 }}
-        cover={
-          <img
-            style={{
-              maxWidth: '100%',
-              maxHeight: '100%',
-            }}
-            alt="example"
-            src="https://www.aroma-zen.com//cache/images/images/products/47/2787/2787_lait_corporel_regenerant_a_la_grenade_200_ml_1.jpg.thumb_1000x800.jpg"
-          />
-        }
+        className="card-component"
+        cover={<Img imgClass={'image-card-cover'} alt={name} src={image} />}
       >
-        <ContentCard />
+        <ContentCard title={name} rate={rate} price={price} />
       </Card>
     </div>
   );

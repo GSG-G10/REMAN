@@ -6,7 +6,7 @@ import {
   FacebookOutlined,
   InstagramOutlined,
 } from '@ant-design/icons';
-import Img from '../Common/Img';
+import Img from '../common/Img';
 
 const { Title } = Typography;
 function Footer() {

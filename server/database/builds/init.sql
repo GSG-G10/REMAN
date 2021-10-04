@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, products, cart CASCADE;
+DROP TABLE IF EXISTS users, products, cart, categories CASCADE;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
@@ -10,13 +10,19 @@ CREATE TABLE users(
     isAdmin BOOLEAN DEFAULT FALSE
 );
 
+CREATE TABLE categories(
+    id SERIAL PRIMARY KEY,
+    name varchar(100)
+);
+
 CREATE TABLE products(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     price DECIMAL(5,2) NOT NULL,
     discount DECIMAL(5,2),
     image text,
-    rate INTEGER DEFAULT 0
+    rate INTEGER DEFAULT 0,
+    category_id INTEGER REFERENCES categories(id)
 );
 
 
