@@ -16,6 +16,7 @@ const getProductsQuery = ({
                 ON p.category_id = c.id
         WHERE (p.price <= $3 AND p.price >= $4) AND (p.name LIKE $6) AND (c.name IS NULL OR c.name LIKE $7) AND (($5 = -1) OR (p.rate = $5 AND $5 > -1 AND $5 < 6))
     LIMIT $1 OFFSET ($2 - 1) * $1
+    ORDER BY p.id DESC
   `,
   [perPage, page, maxPrice, minPrice, rate, `%${name}%`, `%${category}%`],
 );
