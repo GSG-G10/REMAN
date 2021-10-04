@@ -5,11 +5,13 @@ const { Option } = Select;
 const { Item } = Form;
 
 const Categories = () => (
-  <Item name="Categories" label="Categories">
+  <Item name="Category" label="Category">
     <Select>
-      <Option value="red">Red</Option>
-      <Option value="green">Green</Option>
-      <Option value="blue">Blue</Option>
+      <Option value="category1">category1</Option>
+      <Option value="category2">category2</Option>
+      <Option value="category3">category3</Option>
+      <Option value="category4">category4</Option>
+      <Option value="category5">category5</Option>
     </Select>
   </Item>
 );

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Form, Modal, Button } from 'antd';
+import axios from 'axios';
 
 import Categories from './Categories';
 import MinPrice from './MinPrice';
@@ -14,20 +15,30 @@ import './style.css';
 import { ControlFilled } from '@ant-design/icons';
 
 const FilterProducts = () => {
-  const [data, setData] = useState({});
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(0);
+  const [filterRequest, setFilterRequest] = useState({});
+  const [minPrice, setMinPrice] = useState();
+  const [maxPrice, setMaxPrice] = useState();
   const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
-    console.log(data);
-    // return () => setData({})
-  }, [data]);
+    const { MaxPrice, MinPrice, Name, Category, Rate } = filterRequest;
+    axios.get('http://localhost:5000/products', {
+      params: {
+        name: Name,
+        category : Category,
+        maxPrice: MaxPrice,
+        minPrice: minPrice,
+        rate:Rate
+      },
+    }).then((response) => {
+      response.data.length >= 1 ? 
+    })
+  }, [filterRequest]);
 
   const onFinish = (values) => {
-    values['Min Price'] = minPrice;
-    values['Max Price'] = maxPrice;
-    setData(values);
+    values['MinPrice'] = minPrice;
+    values['MaxPrice'] = maxPrice;
+    setFilterRequest(values);
   };
 
   const showModal = () => setIsModalVisible(true);
@@ -38,14 +49,16 @@ const FilterProducts = () => {
 
   return (
     <>
-      <Button
-        className="FilterButton"
-        icon={<ControlFilled />}
-        size="large"
-        onClick={showModal}
-      >
-        Search
-      </Button>
+      <section className="filter-section">
+        <Button
+          className="FilterButton"
+          icon={<ControlFilled />}
+          size="large"
+          onClick={showModal}
+        >
+          Filter
+        </Button>
+      </section>
       <Modal
         visible={isModalVisible}
         title="Title"

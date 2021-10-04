@@ -1,3 +1,9 @@
-.FilterButton{
-    width: 7rem;
+.filter-section {
+  width: 90%;
+  margin: 2rem auto;
+}
+
+.FilterButton {
+  width: 7rem;
+  float: right;
 }

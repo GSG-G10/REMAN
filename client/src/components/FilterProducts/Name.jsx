@@ -2,7 +2,7 @@ import { Form, Input } from 'antd';
 const { Item } = Form;
 
 const Name = () => (
-  <Item name="name" label="name">
+  <Item name="Name" label="Name">
     <Input />
   </Item>
 );

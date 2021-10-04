@@ -3,9 +3,9 @@ import 'antd/dist/antd.css';
 import Img from '../components/common/Img'
 import './header.css';
 
-function Header() {
+function Slider() {
   return (
-    <div className="header">
+    <div className="slider-container">
       <Carousel autoplay className="slider">
         <Img
           src="https://mybeautywhisper.com/wp-content/uploads/2021/06/Human-32.jpg"
@@ -31,4 +31,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Slider;

@@ -1,9 +1,10 @@
-import Header from '../../Home/Header';
 import FilterProducts from '../FilterProducts';
 
 const Main = () => (
   <>
-    <FilterProducts />
+    <main className="main">
+      <FilterProducts />
+    </main>
   </>
 );
 export default Main;

@@ -4,7 +4,7 @@ import 'antd/dist/antd.min.css';
 const { Item } = Form;
 
 const RateStars = () => (
-  <Item name="rate" label="Rate">
+  <Item name="Rate" label="Rate">
     <Rate />
   </Item>
 );
