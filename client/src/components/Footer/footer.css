@@ -20,6 +20,15 @@
 .footer p{
   text-align: center;
 }
+.logo{
+  width:150px;
+  height: 100px;
+  margin: 0;
+  padding: 0;
+}
+.payment-img{
+  margin: 20px 0 0 0;
+}
 @media (max-width : 1000px) {
   .footer{
     margin: auto;
