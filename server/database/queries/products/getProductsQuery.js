@@ -1,7 +1,7 @@
 const connection = require('../../config/connection');
 
 const getProductsQuery = ({
-  perPage = 10, page = 1, maxPrice = 1000, minPrice = 0, rate = -1, name = '', category = '',
+  perPage = 9, page = 1, maxPrice = 1000, minPrice = 0, rate = -1, name = '', category = '',
 }) => connection.query(
   `
   SELECT p.id,
