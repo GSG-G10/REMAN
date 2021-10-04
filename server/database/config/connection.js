@@ -1,6 +1,4 @@
 const { Pool } = require('pg');
-require('env2')('config.env');
-
 
 const { DEV_DB_URL, TEST_DB_URL, DATABASE_URL } = process.env;
 let dbUrl = '';
