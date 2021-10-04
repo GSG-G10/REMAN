@@ -1,3 +1,4 @@
+import { Typography } from 'antd';
 import './footer.css';
 import {
   YoutubeOutlined,
@@ -7,6 +8,7 @@ import {
 } from '@ant-design/icons';
 import Img from '../Common/Img';
 
+const { Title } = Typography;
 function Footer() {
   const company = [
     'Delivery',
@@ -27,7 +29,7 @@ function Footer() {
           <Img
             src="https://cdn.discordapp.com/attachments/893117015223586948/893841984328970250/1e72120b0d98410fbfeba53b9142b186_1.png"
             alt="REMAN logo"
-            imgClass='logo'
+            imgClass="logo"
           />
           <div className="icons-list">
             <FacebookOutlined
@@ -46,28 +48,28 @@ function Footer() {
           <Img
             src="http://laberpresta.com/v17/laber_rubix_v17/img/cms/paymen.png"
             alt="payment logos"
-            imgClass='payment-img'
+            imgClass="payment-img"
           />
         </div>
         <ul className="list">
-          <h4>Our Company </h4>
+          <Title level={4}>Our Company</Title>
           {company.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
 
         <ul className="list">
-          <h4>Your account </h4>
+          <Title level={4}>Your account</Title>
           {account.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
         <ul className="list">
-          <h4>Let’s Talk </h4>
+          <Title level={4}>Let’s Talk</Title>
           {conatct.map((item) => (
             <li key={item}>{item}</li>
           ))}
-          <h4>Find Us</h4>
+          <Title level={4}>Find Us</Title>
           <li> 502 New Design Str</li>
           <li>Melbourne, Australia</li>
         </ul>
