@@ -1,0 +1,47 @@
+.header-navbar-logo {
+  height: 100%;
+  width: 10%;
+}
+.header-navbar-logo-img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.header-navbar-userArea {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-nav {
+  width: 35%;
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .header-nav {
+    width: 50%;
+  }
+  .header-navbar-userArea {
+    width: 70%;
+  }
+  .header-navbar-logo {
+    width: 30%;
+  }
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .header-navbar-logo {
+    width: 20%;
+  }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .header-nav {
+    width: 65%;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .header-nav {
+    width: 47%;
+  }
+}
