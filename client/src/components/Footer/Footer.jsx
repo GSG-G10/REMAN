@@ -1,7 +1,11 @@
 import './footer.css';
 import {
-  YoutubeOutlined, LinkedinOutlined, FacebookOutlined, InstagramOutlined,
+  YoutubeOutlined,
+  LinkedinOutlined,
+  FacebookOutlined,
+  InstagramOutlined,
 } from '@ant-design/icons';
+import Img from '../Common/Img';
 
 function Footer() {
   const company = [
@@ -20,16 +24,29 @@ function Footer() {
     <section className="footer">
       <div className="container">
         <div className="photos">
-          <img src="../../assets/logo.png" alt="REMAN logo" />
+          <Img
+            src="https://cdn.discordapp.com/attachments/893117015223586948/893841984328970250/1e72120b0d98410fbfeba53b9142b186_1.png"
+            alt="REMAN logo"
+            imgClass='logo'
+          />
           <div className="icons-list">
-            <FacebookOutlined style={{ fontSize: '30px', margin: '10px 10px 10px 0' }} />
-            <InstagramOutlined style={{ fontSize: '30px', margin: '10px 10px 10px 0' }} />
-            <LinkedinOutlined style={{ fontSize: '30px', margin: '10px 10px 10px 0' }} />
-            <YoutubeOutlined style={{ fontSize: '30px', margin: '10px 10px 10px 0' }} />
+            <FacebookOutlined
+              style={{ fontSize: '30px', margin: '10px 10px 10px 0' }}
+            />
+            <InstagramOutlined
+              style={{ fontSize: '30px', margin: '10px 10px 10px 0' }}
+            />
+            <LinkedinOutlined
+              style={{ fontSize: '30px', margin: '10px 10px 10px 0' }}
+            />
+            <YoutubeOutlined
+              style={{ fontSize: '30px', margin: '10px 10px 10px 0' }}
+            />
           </div>
-          <img
+          <Img
             src="http://laberpresta.com/v17/laber_rubix_v17/img/cms/paymen.png"
             alt="payment logos"
+            imgClass='payment-img'
           />
         </div>
         <ul className="list">
