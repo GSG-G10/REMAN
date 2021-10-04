@@ -1,4 +1,10 @@
 import Header from '../components/Header';
+import Slider from '../Slider/Slider';
+const Home = () => (
+  <>
+    <Header />
+    <Slider />
+  </>
+);
 
-const Home = () => <Header />;
 export default Home;
