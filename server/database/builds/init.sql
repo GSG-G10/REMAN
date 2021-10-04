@@ -1,6 +1,6 @@
 BEGIN;
 
-DROP TABLE IF EXISTS users, products, cart CASCADE;
+DROP TABLE IF EXISTS users, products, cart, categories CASCADE;
 
 CREATE TABLE users(
     id SERIAL PRIMARY KEY,
@@ -10,13 +10,19 @@ CREATE TABLE users(
     isAdmin BOOLEAN DEFAULT FALSE
 );
 
+CREATE TABLE categories(
+    id SERIAL PRIMARY KEY,
+    name varchar(100)
+);
+
 CREATE TABLE products(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     price DECIMAL(5,2) NOT NULL,
     discount DECIMAL(5,2),
     image text,
-    rate INTEGER DEFAULT 0
+    rate INTEGER DEFAULT 0,
+    category_id INTEGER REFERENCES categories(id)
 );
 
 
@@ -28,10 +34,10 @@ CREATE TABLE cart(
     PRIMARY KEY (user_id,product_id)
 );
 
-insert into users(name, email, password, isAdmin) values ('Nizar', 'nizar@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
-insert into users(name, email, password, isAdmin) values ('Reem', 'reem@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
-insert into users(name, email, password, isAdmin) values ('Muath', 'muath@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
-insert into users(name, email, password, isAdmin) values ('Eman', 'eman@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
-insert into users(name, email, password, isAdmin) values ('Abdallah', 'abdallah@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
+INSERT INTO users(name, email, password, isAdmin) VALUES ('Nizar', 'nizar@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
+INSERT INTO users(name, email, password, isAdmin) VALUES ('Reem', 'reem@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
+INSERT INTO users(name, email, password, isAdmin) VALUES ('Muath', 'muath@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
+INSERT INTO users(name, email, password, isAdmin) VALUES ('Eman', 'eman@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
+INSERT INTO users(name, email, password, isAdmin) VALUES ('Abdallah', 'abdallah@gmail.com', '$2a$10$Bp9etHWYo1UAANX99Ju3LuEzTlH7d1mq8snUpUzV7UhfBlQwozIly', true);
 
 COMMIT;

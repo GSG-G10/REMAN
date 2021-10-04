@@ -10,7 +10,7 @@ import { DownOutlined } from '@ant-design/icons';
 const { Item, SubMenu, ItemGroup } = Menu;
 
 const Nav = () => (
-  <Menu style={{ width: '34%' }} mode="horizontal">
+  <Menu className='header-nav' mode="horizontal">
     <Item key="alipay">
       <NavLink to="/home">Home</NavLink>
     </Item>
