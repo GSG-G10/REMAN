@@ -9,6 +9,9 @@ import Name from './Name';
 import FilterButton from './FilterButton';
 
 import 'antd/dist/antd.min.css';
+import './style.css';
+
+import { ControlFilled } from '@ant-design/icons';
 
 const FilterProducts = () => {
   const [data, setData] = useState({});
@@ -35,8 +38,13 @@ const FilterProducts = () => {
 
   return (
     <>
-      <Button type="primary" onClick={showModal}>
-        Open Modal with customized footer
+      <Button
+        className="FilterButton"
+        icon={<ControlFilled />}
+        size="large"
+        onClick={showModal}
+      >
+        Search
       </Button>
       <Modal
         visible={isModalVisible}
