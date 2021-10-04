@@ -1,4 +1,7 @@
-const {productByCategory} = require('./getProductByCgId')
+const getProductsQuery = require('./getProductsQuery');
+const productDataQuery = require('./getProductDataQuery');
 
-
-module.exports = {productByCategory};
+module.exports = {
+  getProductsQuery,
+  productDataQuery,
+};
