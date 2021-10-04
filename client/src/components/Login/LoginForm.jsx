@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Checkbox } from "antd";
 import { Link } from "react-router-dom";
-import Item from "antd/lib/list/Item";
-const msg = 'nnnnnnnnoooooooo'
+const { Item } = Form;
+
 const LoginForm = () => {
   const [loginData, setLoginData] = useState(null);
   const onFinish = (values) => {
-    setLoginData(["Success:", values]);
+    setLoginData([values]);
   };
 
   return (
@@ -41,7 +41,7 @@ const LoginForm = () => {
           rules={[
             {
               required: true,
-              message: msg ||"Please input your password!",
+              message: "Please input your password!",
             },
           ]}
         >
