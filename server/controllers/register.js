@@ -23,7 +23,7 @@ const signup = (req, res) => {
     .then((newPass) => addUser(user, newPass))
     .then(()=> res.status(200).redirect('/login'))
     .catch(err => {
-        res.status(404).json({'err':err.message})
+        res.status(500).json({'err':err.message})
     });
 
 };
