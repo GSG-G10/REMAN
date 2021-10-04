@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input, Button, Checkbox } from "antd";
 import { Link } from "react-router-dom";
+import Item from "antd/lib/list/Item";
 const msg = 'nnnnnnnnoooooooo'
 const LoginForm = () => {
   const [loginData, setLoginData] = useState(null);
@@ -20,7 +21,7 @@ const LoginForm = () => {
         layout="vertical"
         scrollToFirstError
       >
-        <Form.Item
+        <Item
           label="Username"
           name="username"
           rules={[
@@ -32,9 +33,9 @@ const LoginForm = () => {
           ]}
         >
           <Input autoFocus />
-        </Form.Item>
+        </Item>
 
-        <Form.Item
+        <Item
           label="Password"
           name="password"
           rules={[
@@ -45,23 +46,23 @@ const LoginForm = () => {
           ]}
         >
           <Input.Password />
-        </Form.Item>
+        </Item>
 
         <div className="div-remember-return">
-          <Form.Item name="remember" valuePropName="checked">
+          <Item name="remember" valuePropName="checked">
             <Checkbox>Remember me</Checkbox>
-          </Form.Item>
-          <Form.Item name="remember" valuePropName="checked">
+          </Item>
+          <Item name="remember" valuePropName="checked">
             <span>you don't have Account? </span>
             <Link to="/signup"> Sign up</Link>
-          </Form.Item>
+          </Item>
         </div>
 
-        <Form.Item>
+        <Item>
           <Button className="btn-form" type="primary" htmlType="submit">
             Submit
           </Button>
-        </Form.Item>
+        </Item>
       </Form>
       <Button
         className="btn-form"
