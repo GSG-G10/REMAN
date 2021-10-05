@@ -1,37 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ProductCard from './Card/ProductCard';
 import '../home.css';
 
 const BestSellerSection = () => {
-  const [products, setProducts] = useState([
-    {
-      quantity: 0,
-      name: 'example',
-      id: 1,
-      price: 29,
-      rate: 4.5,
-      image:
-        'https://www.aroma-zen.com//cache/images/images/products/47/2787/2787_lait_corporel_regenerant_a_la_grenade_200_ml_1.jpg.thumb_1000x800.jpg',
-    },
-    {
-      quantity: 1,
-      name: 'example',
-      id: 2,
-      price: 29,
-      rate: 4.5,
-      image:
-        'https://www.aroma-zen.com//cache/images/images/products/47/2787/2787_lait_corporel_regenerant_a_la_grenade_200_ml_1.jpg.thumb_1000x800.jpg',
-    },
-    {
-      quantity: 0,
-      name: 'example',
-      id: 3,
-      price: 29,
-      rate: 4.5,
-      image:
-        'https://www.aroma-zen.com//cache/images/images/products/47/2787/2787_lait_corporel_regenerant_a_la_grenade_200_ml_1.jpg.thumb_1000x800.jpg',
-    },
-  ]);
+  const [products, setProducts] = useState(null);
+
+  useEffect(
+    () => {
+      //fetch to get data about products
+
+    },[])
 
   return (
     <div className="best-seller-section">
