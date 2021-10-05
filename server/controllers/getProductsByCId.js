@@ -3,7 +3,7 @@ const {productByCategory} = require('../database/queries');
 
 
 const getProductByCId = (req, res) => {
-    const category_id = req.params;
+    const categoryId = req.params;
 
     productByCategory(categoryId)
     .then((data) => res.json(data))
