@@ -1,12 +1,25 @@
 import React from 'react';
 import { ShoppingOutlined, ShoppingFilled } from '@ant-design/icons';
-const PurchaseBtn = () => {
+
+import postProductToCart from './purchaseRequest';
+
+const PurchaseBtn = ({ productId, quantity }) => {
   return (
-    <div onClick={() => {}}>
-      {false ? (
-        <ShoppingOutlined className="icon icon-shopping" />
+    <div>
+      {quantity ? (
+        <ShoppingFilled
+          className="icon icon-shopping"
+          onClick={() => {
+            postProductToCart(0, productId);
+          }}
+        />
       ) : (
-        <ShoppingFilled className="icon icon-shopping" />
+        <ShoppingOutlined
+          className="icon icon-shopping"
+          onClick={() => {
+            postProductToCart(1, productId);
+          }}
+        />
       )}
     </div>
   );

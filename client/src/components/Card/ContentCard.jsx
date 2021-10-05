@@ -3,7 +3,7 @@ import PurchaseBtn from './PurchaseBtn';
 import LikeBtn from './LikeBtn';
 const { Meta } = Card;
 
-const ContentCard = ({ title, rate, price }) => {
+const ContentCard = ({ title, rate, price, productId, quantity }) => {
   return (
     <div className="content-card">
       <Meta title={title} />
@@ -11,7 +11,7 @@ const ContentCard = ({ title, rate, price }) => {
       <div className="card-btns-price">
         <p className="price">{price} $</p>
         <div className="btns">
-          <PurchaseBtn />
+          <PurchaseBtn productId={productId} quantity={quantity} />
           <LikeBtn />
         </div>
       </div>
