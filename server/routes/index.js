@@ -7,7 +7,7 @@ const { getProducts, getProductData } = require('../controllers/products');
 
 router.post('/register', signup);
 
-router.get('categories/:productId', getProductByCId)
+router.get('categories/:categoryId/products', getProductByCId)
 router.get('/', (req, res) => {
   res.json({ message: 'Hello World' });
 });
