@@ -1,18 +1,29 @@
+import React, {useEffect, useState} from 'react';
 import { Form, Select } from 'antd';
+import axios from 'axios';
 import 'antd/dist/antd.min.css';
 
 const { Option } = Select;
 const { Item } = Form;
 
-const Categories = () => (
+const Categories = () => {
+  
+  const [categories, setCategories] = useState([]);
+  
+  const categoryList = categories.map((category) => <Option key={category.id} value={category.id}>{category.name}</Option>);
+
+  useEffect(() => {
+    axios.get('/categories').then((res) => {
+      setCategories(res.data);
+    });
+  }, []);
+
+  return (
   <Item name="Category" label="Category">
     <Select>
-      <Option value="category1">category1</Option>
-      <Option value="category2">category2</Option>
-      <Option value="category3">category3</Option>
-      <Option value="category4">category4</Option>
-      <Option value="category5">category5</Option>
+      {categoryList}
     </Select>
   </Item>
-);
+  )
+};
 export default Categories;
