@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Form, Input, Button, Select, InputNumber, message, Modal } from 'antd';
 import axios from 'axios';
 
-// import DragDrop from './DragDrop';
 
 import './style.css';
 const { Item } = Form;
@@ -24,9 +23,6 @@ const NewProduct = () => {
     Modal.warning({
       content: 'Are you sure you want to upload a new product',
       onOk() {
-        // const { productName, productCategory, imageUrl, Price, Discount } =
-        //   values;
-          console.log(values)
         axios.post('/add-new-product', values);
       },
     });
