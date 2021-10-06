@@ -2,7 +2,7 @@ import { Card, Rate } from 'antd';
 import PurchaseBtn from './PurchaseBtn';
 const { Meta } = Card;
 
-const ContentCard = ({ title, rate, price, productId, quantity }) => {
+const ContentCard = ({ title, rate, price, productId }) => {
   return (
     <div className="content-card">
       <Meta title={title} />
@@ -11,7 +11,7 @@ const ContentCard = ({ title, rate, price, productId, quantity }) => {
 
         <p className="price">{price} $</p>
         <div className="btns">
-          <PurchaseBtn productId={productId} quantity={quantity} />
+          <PurchaseBtn productId={productId} />
         </div>
       </div>
     </div>

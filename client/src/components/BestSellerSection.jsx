@@ -1,18 +1,20 @@
-import React, { useContext } from 'react';
-import ProductCard from './Card/ProductCard';
+import React, { useEffect, useState } from 'react';
 import '../home.css';
-import DataContext from '../Utils/DataContext';
+import ProductCard from './Card/ProductCard';
 
-const BestSellerSection = () => {
-  const data = useContext(DataContext)
-  console.log(data)
+const BestSellerSection = ({ products }) => {
+  const [cards, setCards] = useState(null);
+  useEffect(() => {
+    setCards(products);
+  }, [products]);
+
   return (
     <div className="best-seller-section">
       <h2 className="title-section">Best Seller</h2>
 
       <div className="seller">
-        {/* {products &&
-          products.map((card) => <ProductCard key={card.id} card={card} />)} */}
+        {cards &&
+          cards.map((card) => <ProductCard key={card.id} card={card} />)}
       </div>
     </div>
   );

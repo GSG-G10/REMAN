@@ -1,18 +1,20 @@
-import { useState } from 'react';
-import DataContext from '../../Utils/DataContext';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import BestSellerSection from '../BestSellerSection';
 import FilterProducts from '../FilterProducts';
+import './style.css'
+
 
 const Main = () => {
   const [filterResult, setFilterResult] = useState();
+
   return (
-    <DataContext.Provider value={filterResult}>
       <main className="main">
         <FilterProducts setFilterResult={setFilterResult} />
-        <BestSellerSection />
+        <BestSellerSection products={filterResult} />
 
       </main>
-    </DataContext.Provider>
+
   );
 };
 
