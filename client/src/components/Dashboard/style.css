@@ -30,9 +30,6 @@
 .dashboard-new-product-container {
   width: 30%;
 }
-.dashboard-new-product-container-form {
-  width: 90%;
-}
 @media screen and (min-width: 320px) and (max-width: 768px) {
   .dashboard-new-product-container {
     width: 70%;
