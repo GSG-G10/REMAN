@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import ProductCard from './Card/ProductCard';
 import '../home.css';
+import ProductCard from './Card/ProductCard';
 
-const BestSellerSection = () => {
-  const [products, setProducts] = useState(null);
-
-  useEffect(
-    () => {
-      //fetch to get data about products
-
-    },[])
+const BestSellerSection = ({ products }) => {
+  const [cards, setCards] = useState(null);
+  useEffect(() => {
+    setCards(products);
+  }, [products]);
 
   return (
     <div className="best-seller-section">
       <h2 className="title-section">Best Seller</h2>
 
       <div className="seller">
-        {products &&
-          products.map((card) => <ProductCard key={card.id} card={card} />)}
+        {cards &&
+          cards.map((card) => <ProductCard key={card.id} card={card} />)}
       </div>
     </div>
   );
