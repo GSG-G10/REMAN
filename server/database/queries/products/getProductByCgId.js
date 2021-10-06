@@ -9,4 +9,4 @@ const productByCategory = (cid) => {
   return connection.query(sqlQuery);
 };
 
-module.exports = { productByCategory };
+module.exports = productByCategory;
