@@ -15,7 +15,7 @@ switch (process.env.NODE_ENV) {
     break;
   default:
     throw new Error('DATA BASE ERROR');
-}
+};
 
 const options = {
   connectionString: dbUrl,
@@ -23,5 +23,6 @@ const options = {
     rejectUnauthorized: false,
   },
 };
+
 
 module.exports = new Pool(options);
