@@ -1,6 +1,8 @@
 const router = require('express').Router();
 
-const { getProducts, getProductData, addToCart } = require('../controllers/products');
+const {
+  getProducts, getProductData, addToCart, addNewProduct,
+} = require('../controllers/products');
 const { checkAuth } = require('../middlewares');
 
 const { deleteCartProduct } = require('../controllers/cart');
@@ -19,6 +21,7 @@ router.get('/categories', getCategories);
 
 router.post('/register', signup);
 router.post('/cart', checkAuth, addToCart);
+router.post('/add-new-product', addNewProduct);
 
 router.delete('/cart/:productId', deleteCartProduct);
 
