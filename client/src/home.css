@@ -1,0 +1,19 @@
+.seller {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  .best-seller-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+  .title-section {
+    align-self: flex-start;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
