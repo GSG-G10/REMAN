@@ -35,7 +35,6 @@ const NewProduct = () => {
         labelCol={{ span: 5 }}
         wrapperCol={{ span: 16 }}
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
         autoComplete="off"
         className="dashboard-new-product-container-form"
       >
