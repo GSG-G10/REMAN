@@ -18,7 +18,7 @@ const signup = (req, res) => {
 
     userValid
     .then((user) => checkEmail(user.email))
-    .then(rows => userExist(rows))
+    .then({ rowCount } => userExist(rowCount))
     .then(() => bcrypt.hash(user.password, 10))
     .then((newPass) => addUser(user, newPass))
     .then(({rows})=> {
