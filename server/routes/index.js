@@ -7,6 +7,11 @@ const { deleteCartProduct } = require('../controllers/cart');
 const { getCategories } = require('../controllers/categories');
 const { signup } = require('../controllers');
 const { getProductByCId } = require('../controllers/getProductsByCId');
+const { login, createSession } = require('../controllers/registration');
+
+router.post('/login', login, createSession);
+
+router.post('/register', signup);
 
 router.get('categories/:categoryId/products', getProductByCId);
 router.get('/', (req, res) => {
