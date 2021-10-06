@@ -30,7 +30,7 @@ const FilterProducts = () => {
   useEffect(() => {
     const { MaxPrice, MinPrice, Name, Category, Rate } = filterRequest;
     axios
-      .get('http://localhost:5000/products', {
+      .get('/products', {
         params: {
           name: Name,
           category: Category,

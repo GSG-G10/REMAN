@@ -6,27 +6,34 @@ import DragDrop from './DragDrop';
 
 import './style.css';
 const { Item } = Form;
+const { Option } = Select;
 
 const error = () => message.error('You should upload a new image');
 
 const NewProduct = () => {
   const [imageUrl, setUrlImage] = useState('');
 
-  const [form] = Form.useForm();
   const onFinish = (values) => {
     if (!imageUrl) return error();
-    values.imageUrl = imageUrl;
-    axios.post('http://localhost:5000/add-new-product', values);
 
-    {
-      Modal.success({
-        content: 'New Product is added',
-        onOk() {
-          form.resetFields();
-          setUrlImage('');
-        },
-      });
-    }
+    values.imageUrl = imageUrl;
+    console.log(values);
+
+    Modal.warning({
+      content: 'Are you sure you want to upload a new product',
+      onOk() {
+        const { productName, productCategory, imageUrl, Price, Discount } =
+          values;
+        setUrlImage('');
+        axios.post('/add-new-product', {
+          productName,
+          productCategory,
+          imageUrl,
+          Price,
+          Discount,
+        });
+      },
+    });
   };
   return (
     <div className="dashboard-new-product-container">
@@ -45,7 +52,7 @@ const NewProduct = () => {
             { required: true, message: 'Please input The New Product Name!' },
           ]}
         >
-          <Input />
+          <Input autoFocus />
         </Item>
 
         <Item
@@ -71,7 +78,7 @@ const NewProduct = () => {
           <Item label="Price" name="Price">
             <InputNumber />
           </Item>
-          <Item label="Discount" name="Discount">
+          <Item label="Discount in %" name="Discount">
             <InputNumber />
           </Item>
         </div>
