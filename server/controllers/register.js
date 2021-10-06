@@ -22,7 +22,7 @@ const signup = (req, res) => {
     .then(() => bcrypt.hash(user.password, 10))
     .then((newPass) => addUser(user, newPass))
     .then(({rows})=> {
-        const token = jwt.sign({data: rows[0], is_user: true}, process.env.SECRET_TOKEN);
+        const token = jwt.sign({data: rows[0], is_user: true, is_admin: false}, process.env.SECRET_TOKEN);
 
         res.cookie(process.env.COOKIE_AUTH, token, {httponly: true, secure: true}).redirect('/profile');
   
