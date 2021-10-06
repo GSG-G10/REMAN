@@ -12,14 +12,10 @@ const error = () => message.error('You should upload a new image');
 const NewProduct = () => {
   const [imageUrl, setUrlImage] = useState('');
 
-  const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
-  };
   const [form] = Form.useForm();
   const onFinish = (values) => {
     if (!imageUrl) return error();
     values.imageUrl = imageUrl;
-    console.log(values);
     axios.post('http://localhost:5000/add-new-product', values);
 
     {
