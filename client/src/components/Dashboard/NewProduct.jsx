@@ -57,7 +57,7 @@ const NewProduct = () => {
 
         <Item
           label="Select"
-          name="productCategory"
+          name="category"
           rules={[
             {
               required: true,
@@ -75,11 +75,17 @@ const NewProduct = () => {
         </Item>
 
         <div className="dashboard-form-product-price">
-          <Item label="Price" name="Price">
+          <Item label="Price" name="price">
             <InputNumber />
           </Item>
-          <Item label="Discount in %" name="Discount">
-            <InputNumber />
+          <Item label="Discount" name="discount">
+            <InputNumber
+              defaultValue={100}
+              min={0}
+              max={100}
+              formatter={(value) => `${value}%`}
+              parser={(value) => value.replace('%', '')}
+            />
           </Item>
         </div>
         <DragDrop setUrlImage={setUrlImage} imageUrl={imageUrl} />
