@@ -20,17 +20,16 @@ const openNotification = (placement) => {
     placement,
   });
 };
-const FilterProducts = () => {
+const FilterProducts = ({setFilterResult}) => {
   const [filterRequest, setFilterRequest] = useState({});
   const [minPrice, setMinPrice] = useState();
   const [maxPrice, setMaxPrice] = useState();
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [filterResult, setFilterResult] = useState();
 
   useEffect(() => {
     const { MaxPrice, MinPrice, Name, Category, Rate } = filterRequest;
     axios
-      .get('http://localhost:5000/products', {
+      .get('/products', {
         params: {
           name: Name,
           category: Category,
