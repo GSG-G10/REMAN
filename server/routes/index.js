@@ -10,7 +10,7 @@ const { getProductByCId } = require('../controllers/getProductsByCId');
 
 router.post('/register', signup);
 
-router.get('categories/:categoryId/products', getProductByCId)
+router.get('categories/:categoryId/products', getProd
 router.get('/', (req, res) => {
   res.json({ message: 'Hello World' });
 });
@@ -19,7 +19,7 @@ router.get('/products', getProducts);
 router.get('/products/:id', getProductData);
 router.get('/categories', getCategories);
 
-router.post('/addtocart', checkAuth, addToCart);
+router.post('/cart', checkAuth, addToCart);
 
 router.delete('/cart/:productId', deleteCartProduct);
 
