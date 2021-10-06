@@ -15,7 +15,7 @@ const Categories = () => {
   useEffect(() => {
     axios.get('/categories').then((res) => {
       setCategories(res.data);
-    });
+    }).catch((err) => console.log(err));
   }, []);
 
   return (
