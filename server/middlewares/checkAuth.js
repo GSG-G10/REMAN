@@ -8,9 +8,12 @@ const checkAuth = (req, res, next) => {
 
   verfiy(token, process.env.SECRET, (err, decoded) => {
     if (err) {
-      res.clearCookie('token').status(401).json({ msg: 'you are not authorized' });
+      res
+        .clearCookie('token')
+        .status(401)
+        .json({ msg: 'you are not authorized' });
     } else {
-        if (decoded.is_user) {
+      if (decoded.is_user) {
         req.value = { productId, quantity, userId: decoded.id };
         next();
       } else {
