@@ -20,12 +20,11 @@ const openNotification = (placement) => {
     placement,
   });
 };
-const FilterProducts = () => {
+const FilterProducts = ({setFilterResult}) => {
   const [filterRequest, setFilterRequest] = useState({});
   const [minPrice, setMinPrice] = useState();
   const [maxPrice, setMaxPrice] = useState();
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const [filterResult, setFilterResult] = useState();
 
   useEffect(() => {
     const { MaxPrice, MinPrice, Name, Category, Rate } = filterRequest;
