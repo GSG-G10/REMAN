@@ -24,7 +24,7 @@ router.get('/categories', getCategories);
 
 router.post('/register', signup);
 router.post('/cart', checkAuth, addToCart);
-router.get('/cart', getCartData);
+router.get('/cart', checkAuth, getCartData);
 
 router.delete('/cart/:productId', deleteCartProduct);
 
