@@ -1,5 +1,4 @@
 const deleteCartProductQuery = require('./deleteCartProductQuery');
+const getCartProducts = require('./getCartProducts');
 
-module.exports = {
-  deleteCartProductQuery,
-};
+module.exports = { deleteCartProductQuery, getCartProducts };
