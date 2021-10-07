@@ -15,6 +15,7 @@
 }
 .ant-card-bordered {
   width:130%;
+  overflow-x: hidden;
 }
 .cards2{
   display: flex;
