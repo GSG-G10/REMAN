@@ -31,5 +31,8 @@
     "eslint-plugin-import": "^2.24.2",
     "nodemon": "^2.0.13",
     "supertest": "^6.1.6"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
   }
 }
