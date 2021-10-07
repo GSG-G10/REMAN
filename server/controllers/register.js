@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 const bcrypt = require('bcryptjs');
-=======
-const bcrypt = require('bcrypt');
->>>>>>> Stashed changes
 const { sign } = require('jsonwebtoken');
 // set in cookie use jwt
 
@@ -21,11 +17,7 @@ const signup = (req, res) => {
   };
 
   userValid
-<<<<<<< Updated upstream
-    .then((selectedUser) => checkEmail(selectedUser.email))
-=======
     .then((enteredUser) => checkEmail(enteredUser.email))
->>>>>>> Stashed changes
     .then(({ rowCount }) => userExist(rowCount))
     .then(() => bcrypt.hash(user.password, 10))
     .then((newPass) => addUser(user, newPass))
