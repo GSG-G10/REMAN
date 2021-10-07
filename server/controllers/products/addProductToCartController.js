@@ -5,7 +5,7 @@ const addToCart = (req, res) => {
   const { userId } = req;
 
   addToCartQuery({ productId, quantity, userId })
-    .then(({ rows }) => res.status(201).json({ data: rows.quantity }))
+    .then(({ rows }) => res.status(201).json({ data: rows[0].quantity }))
     .catch((err) => res.status(500).json({ msg: `internal server error ${err}` }));
 };
 
