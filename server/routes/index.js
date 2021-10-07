@@ -20,7 +20,6 @@ router.get('/products/:id', getProductData);
 router.get('/categories', getCategories);
 router.get('/categories/:categoryId/products', getProductByCId);
 
-
 router.post('/register', signup);
 router.post('/cart', checkAuth, addToCart);
 router.post('/add-new-product', checkCategoryId, addNewProduct);

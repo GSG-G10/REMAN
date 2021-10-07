@@ -12,7 +12,7 @@ const { Item, SubMenu, ItemGroup } = Menu;
 const Nav = () => (
   <Menu className='header-nav' mode="horizontal">
     <Item key="alipay">
-      <NavLink to="/home">Home</NavLink>
+      <NavLink to="/">Home</NavLink>
     </Item>
     <SubMenu key="shop" title="Shop" icon={<DownOutlined />}>
       <ItemGroup>
@@ -25,19 +25,19 @@ const Nav = () => (
 
     <SubMenu key="pages" icon={<DownOutlined />} title="Pages">
       <ItemGroup>
-        <Item key="setting:1">page 1</Item>
-        <Item key="setting:2">page 2</Item>
-        <Item key="setting:3">page 3</Item>
-        <Item key="setting:4">page 4</Item>
+        <Item key="page:1">page 1</Item>
+        <Item key="page:2">page 2</Item>
+        <Item key="page:3">page 3</Item>
+        <Item key="page:4">page 4</Item>
       </ItemGroup>
     </SubMenu>
 
     <SubMenu key="elements" icon={<DownOutlined />} title="Elements">
       <ItemGroup title="Pages">
-        <Item key="setting:1">element 1</Item>
-        <Item key="setting:2">element 2</Item>
-        <Item key="setting:3">element 3</Item>
-        <Item key="setting:4">element 4</Item>
+        <Item key="elmeent:1">element 1</Item>
+        <Item key="elmeent:2">element 2</Item>
+        <Item key="elmeent:3">element 3</Item>
+        <Item key="elmeent:4">element 4</Item>
       </ItemGroup>
     </SubMenu>
     <Item key="blog">
