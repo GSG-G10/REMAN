@@ -2,6 +2,7 @@
   margin: auto;
   width:90%;
   padding:10px;
+  overflow-x:hidden ;
 }
 .card-image{
   width:150px;
@@ -15,7 +16,7 @@
 }
 .ant-card-bordered {
   width:130%;
-  overflow-x: hidden;
+
 }
 .cards2{
   display: flex;
