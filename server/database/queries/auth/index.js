@@ -1,3 +1,4 @@
 const checkUser = require('./checkUser');
+const checkAdmin = require('./checkAdmin');
 
-module.exports = { checkUser };
+module.exports = { checkUser, checkAdmin };
