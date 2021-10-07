@@ -1,6 +1,6 @@
 import { Carousel } from 'antd';
 import 'antd/dist/antd.css';
-import Img from '../components/common/Img'
+import Img from '../components/common/Img';
 import './header.css';
 
 function Slider() {

@@ -1,19 +1,7 @@
 {
-    "eslint.workingDirectories": ["client", "server"],
-    "[javascript]": {
-      "editor.codeActionsOnSave": {
-        "source.fixAll": true
-      }
-    },
-    "[json]": {
-      "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": false,
-    "files.eol": "\n",
-    "cSpell.words": [
-      "REMAN",
-      "antd"
-    ],
-    "prettier.singleQuote": true
+  "git.ignoreLimitWarning": true,
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   }
+}

@@ -1,12 +1,16 @@
+import { message } from 'antd';
 import axios from 'axios';
 
 const postProductToCart = (quantityOfProduct, productId) => {
   axios
     .post('/cart', {
       quantity: quantityOfProduct,
-      productId:  productId,
+      productId,
     })
-    .then((data) => data.json());
+    .then((data) => data.data)
+    .then(() => {
+      message.success('product added to cart successfully !');
+    });
 };
 
 export default postProductToCart;

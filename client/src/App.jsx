@@ -10,7 +10,7 @@ import Home from './pages/Home';
 import Product from './pages/Product';
 import Dashboard from './components/Dashboard';
 import Error from './pages/error404';
-import Cart from './Cart/Cart'
+import Cart from './Cart/Cart';
 
 function App() {
   return (

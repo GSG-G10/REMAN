@@ -1,11 +1,13 @@
-import { Form, InputNumber, Slider, Row, Col } from 'antd';
+/* eslint-disable react/prop-types */
+import {
+  Form, InputNumber, Slider, Row, Col,
+} from 'antd';
 
 import 'antd/dist/antd.min.css';
 
 const { Item } = Form;
 
 const MaxPrice = ({ maxPrice, setMaxPrice, minPrice }) => {
-
   const onChangeMaxPrice = (value) => setMaxPrice(value);
 
   return (

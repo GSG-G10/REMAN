@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
-import { Form, Input, Button, Select, InputNumber, message, Modal } from 'antd';
+import {
+  Form, Input, Button, Select, InputNumber, Modal,
+} from 'antd';
 import axios from 'axios';
 
-
 import './style.css';
+
 const { Item } = Form;
 const { Option } = Select;
-
-const error = () => message.error('You should upload a new image');
 
 const NewProduct = () => {
   const [categories, setCategories] = useState();
@@ -73,7 +73,8 @@ const NewProduct = () => {
           </Item>
           <Item label="Discount" name="discount">
             <InputNumber
-              
+
+              // eslint-disable-next-line react/jsx-props-no-multi-spaces
               min={0}
               max={100}
               formatter={(value) => `${value}%`}

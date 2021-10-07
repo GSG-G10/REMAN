@@ -1,9 +1,11 @@
-import React from 'react';
-import { Form, Input, Button, Checkbox, message } from 'antd';
-import { Link } from 'react-router-dom';
+/* eslint-disable no-unused-expressions */
+import {
+  Form, Input, Button, Checkbox, message,
+} from 'antd';
+import { Link, useHistory } from 'react-router-dom';
 import axios from 'axios';
+
 const { Item } = Form;
-import { useHistory } from 'react-router-dom';
 
 const LoginForm = () => {
   const history = useHistory();
@@ -12,14 +14,12 @@ const LoginForm = () => {
     message.error('You must remmeber your password :D');
   };
 
-  const onFinish = (values) => {
-    return axios
-      .post('/login', values)
+  const onFinish = (values) => axios
+    .post('/login', values)
 
-      .then((data) => {
-        data.status === 200 ? history.push('/') : error();
-      });
-  };
+    .then((data) => {
+      data.status === 200 ? history.push('/') : error();
+    });
 
   return (
     <div className="login-form">
@@ -65,7 +65,9 @@ const LoginForm = () => {
             <Checkbox>Remember me</Checkbox>
           </Item>
           <Item name="remember" valuePropName="checked">
-            <span>you don't have Account? </span>
+            <span>
+              you dont have Account?
+            </span>
             <Link to="/signup"> Sign up</Link>
           </Item>
         </div>

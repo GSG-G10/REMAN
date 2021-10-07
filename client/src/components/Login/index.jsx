@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Typography } from "antd";
-const { Title } = Typography;
-import { CSSTransition } from "react-transition-group";
-import LoginForm from "./LoginForm";
-import Social from "../SignUp/Social";
+/* eslint-disable jsx-a11y/img-redundant-alt */
+import { useEffect, useState } from 'react';
+import { Typography } from 'antd';
+import { CSSTransition } from 'react-transition-group';
 
-import login from "../../assets/login.gif";
-import "./login.css";
+import LoginForm from './LoginForm';
+import Social from '../SignUp/Social';
+
+import login from '../../assets/login.gif';
+import './login.css';
+
+const { Title } = Typography;
 
 const Login = () => {
   const [inProp, setInProp] = useState(false);
