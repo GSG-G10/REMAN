@@ -6,7 +6,7 @@ const {
 const { checkAuth } = require('../middlewares');
 
 const { deleteCartProduct } = require('../controllers/cart');
-const { getCategories } = require('../controllers/categories');
+const { getCategories, checkCategoryId } = require('../controllers/categories');
 const { signup } = require('../controllers');
 const { getProductByCId } = require('../controllers/getProductsByCId');
 
@@ -21,7 +21,7 @@ router.get('/categories', getCategories);
 
 router.post('/register', signup);
 router.post('/cart', checkAuth, addToCart);
-router.post('/add-new-product', addNewProduct);
+router.post('/add-new-product', checkCategoryId, addNewProduct);
 
 router.delete('/cart/:productId', deleteCartProduct);
 

@@ -4,8 +4,8 @@ const addNewProduct = (req, res) => {
   const {
     name, price, discount, url, category,
   } = req.body;
-  addNewProductQuery(
-    name, price, discount, url, category,
-  ).then(res.json('Product added successfully'));
+  addNewProductQuery(name, price, discount, url, category)
+    .then(res.json('Product added successfully'))
+    .catch(() => res.status(500).json('Server Error !'));
 };
 module.exports = addNewProduct;
