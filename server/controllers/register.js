@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const { sign } = require('jsonwebtoken');
+// set in cookie use jwt
 
 const { checkEmail, addUser } = require('../database/queries');
 const { regSchema } = require('../utils/validations');
@@ -21,9 +22,9 @@ const signup = (req, res) => {
     .then(() => bcrypt.hash(user.password, 10))
     .then((newPass) => addUser(user, newPass))
     .then(({ rows }) => {
-      const token = sign({ data: rows[0], is_user: true, is_admin: false },
-        process.env.SECRET_TOKEN);
 
+      // eslint-disable-next-line max-len
+      const token = sign({ data: rows[0], is_user: true, is_admin: false }, process.env.SECRET_TOKEN);
       res.cookie(process.env.COOKIE_AUTH, token, { httponly: true, secure: true }).redirect('/profile');
     })
     .catch((err) => {
