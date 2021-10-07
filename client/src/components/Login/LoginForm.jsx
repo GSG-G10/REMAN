@@ -1,11 +1,25 @@
 import React from 'react';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button, Checkbox, message } from 'antd';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 const { Item } = Form;
+import { useHistory } from 'react-router-dom';
 
 const LoginForm = () => {
-  const onFinish = (values) => axios.post('/login', values).then((data) => {console.log(data)})
+  const history = useHistory();
+
+  const error = () => {
+    message.error('You must remmeber your password :D');
+  };
+
+  const onFinish = (values) => {
+    return axios
+      .post('/login', values)
+
+      .then((data) => {
+        data.status === 200 ? history.push('/') : error();
+      });
+  };
 
   return (
     <div className="login-form">

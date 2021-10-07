@@ -15,6 +15,7 @@ function App() {
   return (
     <Router>
       <Switch>
+        {/* <Route path="/cart" component={Cart} /> */}
         <Route path="/products/:productId" component={Product} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/login" component={Login} />

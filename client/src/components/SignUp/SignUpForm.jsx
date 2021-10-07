@@ -1,14 +1,26 @@
 import { Link } from 'react-router-dom';
-
 import axios from 'axios';
-
 import { Form, Input, Button } from 'antd';
+import { useHistory } from 'react-router-dom';
 
 import './style.css';
 
 const SignUpForm = () => {
 
-  const onFinish = (values) => axios.post('/register', values)
+  const history = useHistory();
+
+  const error = () => {
+    message.error('error');
+  };
+
+  const onFinish = (values) => {
+    return axios
+      .post('/register', values)
+
+      .then((data) => {
+        data.status === 200 ? history.push('/') : error();
+      });
+  };
   
 
   return (
