@@ -1,7 +1,7 @@
 const { deleteCartProductQuery } = require('../../database/queries/cart');
 
 const deleteCartProduct = (req, res) => {
-  const userId = 1; // req.user.id;
+  const { userId } = req;
   const { productId } = req.params;
 
   deleteCartProductQuery(userId, productId)
