@@ -1,12 +1,24 @@
-import React, { useState } from "react";
-import { Form, Input, Button, Checkbox } from "antd";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Form, Input, Button, Checkbox, message } from 'antd';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 const { Item } = Form;
+import { useHistory } from 'react-router-dom';
 
 const LoginForm = () => {
-  const [loginData, setLoginData] = useState(null);
+  const history = useHistory();
+
+  const error = () => {
+    message.error('You must remmeber your password :D');
+  };
+
   const onFinish = (values) => {
-    setLoginData([values]);
+    return axios
+      .post('/login', values)
+
+      .then((data) => {
+        data.status === 200 ? history.push('/') : error();
+      });
   };
 
   return (
@@ -23,12 +35,12 @@ const LoginForm = () => {
       >
         <Item
           label="Username"
-          name="username"
+          name="name"
           rules={[
             {
               type: 'string',
               required: true,
-              message: "Please input your username!",
+              message: 'Please input your username!',
             },
           ]}
         >
@@ -41,7 +53,7 @@ const LoginForm = () => {
           rules={[
             {
               required: true,
-              message: "Please input your password!",
+              message: 'Please input your password!',
             },
           ]}
         >
@@ -67,7 +79,7 @@ const LoginForm = () => {
       <Button
         className="btn-form"
         type="default"
-        style={{ border: "1px solid #ddd" }}
+        style={{ border: '1px solid #ddd' }}
       >
         <Link to="/">Return to Home page</Link>
       </Button>

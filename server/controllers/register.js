@@ -24,7 +24,7 @@ const signup = (req, res) => {
     .then(({ rows }) => {
       // eslint-disable-next-line max-len
       const token = sign({ data: rows[0], is_user: true, is_admin: false }, process.env.SECRET_TOKEN);
-      res.cookie(process.env.COOKIE_AUTH, token, { httponly: true, secure: true }).redirect('/profile');
+      res.cookie(process.env.COOKIE_AUTH, token, { httponly: true, secure: true }).status(200).json({ msg: 'success' });
     })
     .catch((err) => {
       res.status(500).json({ err: err.message });

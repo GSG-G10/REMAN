@@ -1,15 +1,27 @@
-import { useState } from 'react';
-
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 import { Form, Input, Button } from 'antd';
+import { useHistory } from 'react-router-dom';
 
 import './style.css';
 
 const SignUpForm = () => {
-  const [signupData, setSignupData] = useState({});
 
-  const onFinish = (values) => setSignupData(values);
+  const history = useHistory();
+
+  const error = () => {
+    message.error('error');
+  };
+
+  const onFinish = (values) => {
+    return axios
+      .post('/register', values)
+
+      .then((data) => {
+        data.status === 200 ? history.push('/') : error();
+      });
+  };
+  
 
   return (
     <div className="form-container">
@@ -21,7 +33,7 @@ const SignUpForm = () => {
         autoComplete="off"
       >
         <Form.Item
-          name="username"
+          name="name"
           label="Username"
           rules={[
             {
@@ -64,7 +76,7 @@ const SignUpForm = () => {
           <Input.Password />
         </Form.Item>
         <Form.Item
-          name="confirm"
+          name="confirmPassword"
           label="Confirm Password"
           dependencies={['password']}
           hasFeedback
