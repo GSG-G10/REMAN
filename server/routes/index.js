@@ -15,14 +15,10 @@ router.post('/login', login, createSession);
 
 router.post('/register', signup);
 
-router.get('categories/:categoryId/products', getProductByCId);
-router.get('/', (req, res) => {
-  res.json({ message: 'Hello World' });
-});
-
 router.get('/products', getProducts);
 router.get('/products/:id', getProductData);
 router.get('/categories', getCategories);
+router.get('categories/:categoryId/products', getProductByCId);
 
 router.post('/register', signup);
 router.post('/cart', checkAuth, addToCart);
