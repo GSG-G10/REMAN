@@ -7,10 +7,10 @@ import Img from '../common/Img';
 
 import ContentCard from './ContentCard';
 
-const ProductCard = ({ card }) => {
+const ProductCard = ({ card, style }) => {
   const { name, image, price, rate, id } = card;
   return (
-    <div className="card">
+    <div className="card" style={style}>
       <Card
         hoverable
         className="card-component"
