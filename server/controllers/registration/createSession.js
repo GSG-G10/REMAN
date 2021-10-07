@@ -1,11 +1,12 @@
 const { validatePassword, setCookie } = require('../../middlewares');
 
 const createSession = (req, res) => {
-  const { userPassword, data, userName } = req;
-  validatePassword(userPassword, data[0].password)
+  const { password, name } = req.body;
+  const { data } = req;
+  validatePassword(password, data[0].password)
     .then((result) => {
       if (result) {
-        setCookie(res, userName);
+        setCookie(res, name);
       }
     });
 };

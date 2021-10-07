@@ -12,6 +12,7 @@ const app = express();
 app.set('port', process.env.PORT || 5000);
 app.disable('x-powered-by');
 app.use(compression());
+app.use(cookieParser());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
