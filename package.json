@@ -24,6 +24,7 @@
     "joi-password": "^1.6.0",
     "jsonwebtoken": "^8.5.1",
     "pg": "^8.7.1",
+    "query-string": "^7.0.1",
     "react-transition-group": "^4.4.2"
   },
   "devDependencies": {

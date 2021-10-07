@@ -1,7 +1,7 @@
 import Header from '../components/Header';
 import Slider from '../Slider/Slider';
 import Main from '../components/Main';
-import Footer from '../components/Footer/Footer'
+import Footer from '../components/Footer/Footer';
 
 const Home = () => (
   <>
@@ -9,7 +9,7 @@ const Home = () => (
     <Slider />
     <Main />
     <Footer />
-    
+
   </>
 );
 export default Home;

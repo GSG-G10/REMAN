@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
 import { useEffect, useState } from 'react';
 import { Typography } from 'antd';
 import { CSSTransition } from 'react-transition-group';

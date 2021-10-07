@@ -10,12 +10,13 @@ import Home from './pages/Home';
 import Product from './pages/Product';
 import Dashboard from './components/Dashboard';
 import Error from './pages/error404';
+import Cart from './Cart/Cart';
 
 function App() {
   return (
     <Router>
       <Switch>
-        {/* <Route path="/cart" component={Cart} /> */}
+        <Route path="/cart" component={Cart} />
         <Route path="/products/:productId" component={Product} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/login" component={Login} />
