@@ -1,6 +1,7 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
+
 const { checkEmail, addUser } = require('../database/queries');
 const { regSchema } = require('../utils/validations');
 
