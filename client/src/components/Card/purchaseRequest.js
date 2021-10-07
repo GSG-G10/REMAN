@@ -4,7 +4,7 @@ const postProductToCart = (quantityOfProduct, productId) => {
   axios
     .post('/cart', {
       quantity: quantityOfProduct,
-      productId:  productId,
+      productId,
     })
     .then((data) => data.json());
 };

@@ -1,16 +1,18 @@
 import { useState } from 'react';
 import { Layout, Menu } from 'antd';
-import NewProduct from './NewProduct';
 import {
   UploadOutlined,
   UserOutlined,
   VideoCameraOutlined,
 } from '@ant-design/icons';
-
-const { Header, Content, Footer, Sider } = Layout;
-const { Item } = Menu;
+import NewProduct from './NewProduct';
 
 import './style.css';
+
+const {
+  Header, Content, Footer, Sider,
+} = Layout;
+const { Item } = Menu;
 
 const Dashboard = () => {
   const [dashboardSection, setDashboardSection] = useState(<NewProduct />);

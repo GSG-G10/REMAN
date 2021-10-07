@@ -4,9 +4,11 @@
         "es2021": true,
         "node": true
     },
+    "root": true,
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:react/jsx-runtime"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -19,5 +21,15 @@
         "react"
     ],
     "rules": {
+        "linebreak-style": 0,
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ]
     }
 }
