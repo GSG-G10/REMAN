@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Img from "../common/Img";
-import { Rate, InputNumber, Button } from "antd";
+import { Rate, InputNumber, Button, message } from "antd";
 import ProductCard from '../Card/ProductCard';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -18,12 +18,10 @@ function ProductComponent({product, relatedProducts}){
 
     function addToCart(){
         axios.post('/cart',{
-            body : { 
-                product_id : product.id,
-                qunatity
-            }
-        }).then((res) => {
-            console.log(res);
+            quantity: qunatity,
+            productId:  product.id,
+          }).then((res) => {
+            message.success("product added to cart successfully !");
         })
         .catch((err) => {
             if(err.response.status == 401){
