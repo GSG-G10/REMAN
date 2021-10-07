@@ -7,6 +7,7 @@ import {
 import { SignUp } from './components';
 import Login from './components/Login';
 import Home from './pages/Home';
+import Product from './pages/Product';
 import Dashboard from './components/Dashboard';
 import Error from './pages/error404';
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/products/:productId" component={Product} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={SignUp} />

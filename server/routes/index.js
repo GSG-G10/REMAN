@@ -18,12 +18,13 @@ router.post('/register', signup);
 router.get('/products', getProducts);
 router.get('/products/:id', getProductData);
 router.get('/categories', getCategories);
-router.get('categories/:categoryId/products', getProductByCId);
+router.get('/categories/:categoryId/products', getProductByCId);
+
 
 router.post('/register', signup);
 router.post('/cart', checkAuth, addToCart);
 router.post('/add-new-product', checkCategoryId, addNewProduct);
 
-router.delete('/cart/:productId', deleteCartProduct);
+router.delete('/cart/:productId', checkAuth, deleteCartProduct);
 
 module.exports = router;

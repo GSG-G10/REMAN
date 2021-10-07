@@ -5,7 +5,7 @@ import axios from 'axios';
 const { Item } = Form;
 
 const LoginForm = () => {
-  const onFinish = (values) => axios.post('/login', values)
+  const onFinish = (values) => axios.post('/login', values).then((data) => {console.log(data)})
 
   return (
     <div className="login-form">
