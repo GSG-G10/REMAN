@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card } from 'antd';
 
+
 import './card.css';
 import 'antd/dist/antd.min.css';
 import Img from '../common/Img';
@@ -9,6 +10,7 @@ import ContentCard from './ContentCard';
 
 const ProductCard = ({ card, style }) => {
   const { name, image, price, rate, id } = card;
+
   return (
     <div className="card" style={style}>
       <Card
