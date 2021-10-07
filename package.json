@@ -9,12 +9,13 @@
     "dev": "NODE_ENV=development nodemon server/index.js",
     "test": "NODE_ENV=test jest",
     "client": "cd client && npm start",
-    "kill": "fuser -k 5000"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "env2": "^2.2.2",
     "express": "^4.17.1",
