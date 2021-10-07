@@ -1,11 +1,11 @@
-import React, { useEffect,useReducer } from 'react';
+import React, { useEffect,useReducer,useState} from 'react';
 import { Typography,Spin ,Empty} from 'antd';
 const { Title } = Typography;
 import CartCard from './cartCards';
 import './cart.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-let history = useHistory();
+
 const initialState = {
   data: [],
   loading: false,
@@ -26,11 +26,12 @@ function reducer(state, action) {
 function MainCart() {
    const [data, setData] = useState([]);
    const [state, dispatch] = useReducer(reducer, initialState);
+   const history = useHistory();
   useEffect(() => {
     const controller = new AbortController();
     const getProducts=()=>{
       dispatch({ type: "loading" })
-      axios
+     return axios
       .get('/cart')
       .then()
       .catch((err) => {
@@ -39,7 +40,7 @@ function MainCart() {
         }
       });
     }
-    getData().then((res) =>  dispatch({ type: "fetching", payload: res.results }))
+    getProducts().then((res) => dispatch({ type: "fetching", payload: res.data }))
     .catch((error)=> dispatch({ type: "error", payload: error}))
     return () => {
       controller.abort();
@@ -50,10 +51,12 @@ function MainCart() {
       <Title level={4}>Shopping Cart</Title>
       <div className="cards">
       {
-     state.loading? <div className='loading'>   <Spin size="large"/> </div>: (state.error?<div> Error </div>: 
-      (state.data.length>0?<Cards data={state.data} />:<Empty />))
+        state.loading? <div className='loading'>   <Spin size="large"/> </div>: 
+     (state.data.length>0?
+     state.data.map((ele,index)=> <CartCard product={ele} key={index}/> )
+     :<Empty />)
    }
-     
+  
       </div>
     </div>
   );

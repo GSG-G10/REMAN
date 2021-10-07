@@ -6,11 +6,10 @@ import Cart from '../Cart/Cart'
 
 const Home = () => (
   <>
-    {/* <Header />
+    <Header />
     <Slider />
     <Main />
-    <Footer /> */}
-    <Cart/>
+    <Footer />
     
   </>
 );
