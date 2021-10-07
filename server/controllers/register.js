@@ -10,13 +10,13 @@ const signup = (req, res) => {
   const userValid = regSchema.validateAsync(user);
 
   const userExist = (rows) => {
-    if (rows > 0) {
+    if (rows.rowCount > 0) {
       throw new Error('user registered');
     }
   };
 
   userValid
-    .then((u) => checkEmail(u.email))
+    .then((selectedUser) => checkEmail(selectedUser.email))
     .then(({ rowCount }) => userExist(rowCount))
     .then(() => bcrypt.hash(user.password, 10))
     .then((newPass) => addUser(user, newPass))

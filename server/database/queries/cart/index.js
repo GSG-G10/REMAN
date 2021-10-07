@@ -1,3 +1,5 @@
 const deleteCartProductQuery = require('./deleteCartProductQuery');
 
-module.exports = { deleteCartProductQuery };
+module.exports = {
+  deleteCartProductQuery,
+};
