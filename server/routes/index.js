@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { getProducts, getProductData, addToCart } = require('../controllers/products');
 const { checkAuth } = require('../middlewares');
 
-const { deleteCartProduct } = require('../controllers/cart');
+const { deleteCartProduct, getCartData } = require('../controllers/cart');
 const { getCategories } = require('../controllers/categories');
 const { signup } = require('../controllers');
 const { getProductByCId } = require('../controllers/getProductsByCId');
@@ -24,6 +24,7 @@ router.get('/categories', getCategories);
 
 router.post('/register', signup);
 router.post('/cart', checkAuth, addToCart);
+router.get('/cart', getCartData);
 
 router.delete('/cart/:productId', deleteCartProduct);
 
