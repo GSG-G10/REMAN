@@ -9,7 +9,7 @@
     "dev": "NODE_ENV=development nodemon server/index.js",
     "test": "NODE_ENV=test jest",
     "client": "cd client && npm start",
-    "heroku-postbuild": "cd client && npm install --only=prod && npm run build"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",

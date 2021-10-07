@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { SignUp } from './components';
 import Login from './components/Login';
