@@ -12,12 +12,8 @@ const checkAuth = (req, res, next) => {
         .status(401)
         .json({ status: 401, msg: 'you are not authorized' });
     } else {
-      if (decoded.is_user) {
-        req.userId = decoded.id;
+        req.userId = decoded.user_id;
         next();
-      } else {
-        res.status(401).json({ msg: 'You are not user in REMAN' });
-      }
     }
   });
 };
