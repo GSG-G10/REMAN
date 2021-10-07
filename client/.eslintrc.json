@@ -6,8 +6,7 @@
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb",
-        "plugin:react/jsx-runtime"
+        "airbnb"
     ],
     "parserOptions": {
         "ecmaFeatures": {
@@ -20,13 +19,5 @@
         "react"
     ],
     "rules": {
-        "react/jsx-filename-extension": [
-            1,
-            {
-              "extensions": [".js", ".jsx"]
-            }
-          ],
-          "react/jsx-props-no-spreading": [0],
-          "no-underscore-dangle": 0
     }
 }
