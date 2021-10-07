@@ -53,7 +53,7 @@ function MainCart() {
   return (
     <div className="main-cart">
       <Title level={4}>Shopping Cart</Title>
-      <div className="cards">
+      <div className="cards2">
         {
         state.loading ? (
           <div className="loading">

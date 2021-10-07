@@ -14,11 +14,14 @@
   align-items: center;
 }
 .ant-card-bordered {
-  width:100%;
+  width:130%;
 }
-.cards{
+.cards2{
   display: flex;
   justify-content: center;
   flex-direction: column;
   
+}
+.image-card-cover{
+  width:100%;
 }
