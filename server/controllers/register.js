@@ -2,7 +2,6 @@ const bcrypt = require('bcryptjs');
 const { sign } = require('jsonwebtoken');
 // set in cookie use jwt
 
-
 const { checkEmail, addUser } = require('../database/queries');
 const { regSchema } = require('../utils/validations');
 
