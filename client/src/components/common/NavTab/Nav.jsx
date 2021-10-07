@@ -12,7 +12,7 @@ const { Item, SubMenu, ItemGroup } = Menu;
 const Nav = () => (
   <Menu className='header-nav' mode="horizontal">
     <Item key="alipay">
-      <NavLink to="/home">Home</NavLink>
+      <NavLink to="/">Home</NavLink>
     </Item>
     <SubMenu key="shop" title="Shop" icon={<DownOutlined />}>
       <ItemGroup>

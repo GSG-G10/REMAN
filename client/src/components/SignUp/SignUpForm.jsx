@@ -1,15 +1,15 @@
-import { useState } from 'react';
-
 import { Link } from 'react-router-dom';
+
+import axios from 'axios';
 
 import { Form, Input, Button } from 'antd';
 
 import './style.css';
 
 const SignUpForm = () => {
-  const [signupData, setSignupData] = useState({});
 
-  const onFinish = (values) => setSignupData(values);
+  const onFinish = (values) => axios.post('/register', values)
+  
 
   return (
     <div className="form-container">
@@ -21,7 +21,7 @@ const SignUpForm = () => {
         autoComplete="off"
       >
         <Form.Item
-          name="username"
+          name="name"
           label="Username"
           rules={[
             {
@@ -64,7 +64,7 @@ const SignUpForm = () => {
           <Input.Password />
         </Form.Item>
         <Form.Item
-          name="confirm"
+          name="confirmPassword"
           label="Confirm Password"
           dependencies={['password']}
           hasFeedback

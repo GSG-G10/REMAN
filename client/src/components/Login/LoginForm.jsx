@@ -1,13 +1,11 @@
-import React, { useState } from "react";
-import { Form, Input, Button, Checkbox } from "antd";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Form, Input, Button, Checkbox } from 'antd';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
 const { Item } = Form;
 
 const LoginForm = () => {
-  const [loginData, setLoginData] = useState(null);
-  const onFinish = (values) => {
-    setLoginData([values]);
-  };
+  const onFinish = (values) => axios.post('/login', values)
 
   return (
     <div className="login-form">
@@ -23,12 +21,12 @@ const LoginForm = () => {
       >
         <Item
           label="Username"
-          name="username"
+          name="name"
           rules={[
             {
               type: 'string',
               required: true,
-              message: "Please input your username!",
+              message: 'Please input your username!',
             },
           ]}
         >
@@ -41,7 +39,7 @@ const LoginForm = () => {
           rules={[
             {
               required: true,
-              message: "Please input your password!",
+              message: 'Please input your password!',
             },
           ]}
         >
@@ -67,7 +65,7 @@ const LoginForm = () => {
       <Button
         className="btn-form"
         type="default"
-        style={{ border: "1px solid #ddd" }}
+        style={{ border: '1px solid #ddd' }}
       >
         <Link to="/">Return to Home page</Link>
       </Button>

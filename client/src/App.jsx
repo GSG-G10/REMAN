@@ -1,18 +1,26 @@
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect,
+} from 'react-router-dom';
 import { SignUp } from './components';
 import Login from './components/Login';
 import Home from './pages/Home';
 import Dashboard from './components/Dashboard';
+import Error from './pages/error404';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/home" component={Home} />
-        <Route path="/" component={Home} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
+        <Route path="/Not-Found" component={Error} />
+        <Route exact path="/" component={Home} />
+
+        <Redirect to="/Not-Found" />
       </Switch>
     </Router>
   );
