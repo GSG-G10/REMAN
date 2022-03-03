@@ -1,5 +1,5 @@
 .card {
-  width: 30%;
+  width: 25.3%;
   height: auto;
   display: flex;
   justify-content: space-around;
@@ -19,6 +19,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 7rem;
+  margin-left: 15px;
 }
 .card-btns-price {
   display: flex;
@@ -49,6 +50,7 @@
 .image-card-cover {
   width: 99%;
   height: 99%;
+  margin-left: 1px;
 }
 .buttons {
   display: flex;

@@ -7,10 +7,6 @@ function Slider() {
   return (
     <div className="slider-container">
       <Carousel autoplay className="slider">
-        <Img
-          src="https://mybeautywhisper.com/wp-content/uploads/2021/06/Human-32.jpg"
-          alt="beauty skin product "
-        />
 
         <Img
           src="https://stylesage.co/blog/content/images/2020/05/beauty.jpg"

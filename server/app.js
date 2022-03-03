@@ -9,7 +9,7 @@ const router = require('./routes');
 
 const app = express();
 
-app.set('port', process.env.PORT || 5000);
+app.set('port', process.env.PORT || 8080);
 app.disable('x-powered-by');
 app.use(compression());
 app.use(cookieParser());
