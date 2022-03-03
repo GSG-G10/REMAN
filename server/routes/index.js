@@ -11,9 +11,6 @@ const { signup } = require('../controllers');
 const { getProductByCId } = require('../controllers/getProductsByCId');
 const { login, createSession } = require('../controllers/registration');
 
-router.get('/', (req, res) => {
-  res.json({ msg: 'hello' });
-});
 router.get('/products/:id', getProductData);
 router.get('/categories', getCategories);
 router.get('/categories/:categoryId/products', getProductByCId);

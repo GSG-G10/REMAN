@@ -1,9 +1,7 @@
 const getProductsQuery = require('../../database/queries/products/getProductsQuery');
 
 const getProducts = (req, res) => {
-  const queryString = req.query;
-
-  getProductsQuery(queryString)
+  getProductsQuery(req.query)
     .then((data) => {
       res.json(data.rows);
     })

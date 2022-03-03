@@ -1,4 +1,4 @@
-const { regSchema } = require('./regSchema');
+const { regSchema } = require('./registerSchema');
 
 module.exports = {
   regSchema,
